@@ -34,10 +34,10 @@ namespace PBL3
         }
         private int length;
         private LinkedNode<T> head;
-        public void add(LinkedNode<T> node)
+        public void add(T item)
         {
+            LinkedNode<T> node = new LinkedNode<T>(item);
             LinkedNode<T> cur = head;
-
             if (cur == null)
             {
                 head = node;
@@ -62,6 +62,5 @@ namespace PBL3
                 cur = cur.next;
             }
         }
-
     }
 }
