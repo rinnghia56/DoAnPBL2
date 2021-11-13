@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PBL3
 {
+    // mlem mlem
     public class LinkedNode<T>
     {
         public LinkedNode<T> next;
