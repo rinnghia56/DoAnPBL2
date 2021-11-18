@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace PBL3
 {
     // mlem mlem
-    public class LinkedNode<T>
+    public class LinkedNode<T> 
     {
         public LinkedNode<T> next;
         public T item;
@@ -17,7 +18,7 @@ namespace PBL3
             next = null;
         }
     }
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<T>
     {
         public LinkedNode<T> Head
         {
@@ -62,6 +63,24 @@ namespace PBL3
                 Console.WriteLine(cur.item.ToString());
                 cur = cur.next;
             }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            LinkedNode<T> cur = head;
+            
+            do
+            {
+                T d = cur.item;
+                cur = cur.next;
+                yield return d;
+            } while (cur != null);
+           
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
