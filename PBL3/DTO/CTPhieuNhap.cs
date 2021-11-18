@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    class CTPhieuNhap
+    public class CTPhieuNhap
     {
-        string maPN { get; set; }
-        string maSP { get; set; }
-        int soLuong { get; set; }
+        public string maPN { get; set; }
+        public string maSP { get; set; }
+        public int soLuong { get; set; }
     }
 }

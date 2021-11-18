@@ -8,9 +8,9 @@ namespace PBL3.DTO
 {
     public class CTPhieuXuat
     {
-        string maSp { get; set; }
-        string maHD { get; set; }
-        int soLuong { get; set; }
-        decimal thanhTien { get; set; }
+        public string maSp { get; set; }
+        public string maHD { get; set; }
+        public int soLuong { get; set; }
+        public decimal thanhTien { get; set; }
     }
 }

@@ -8,8 +8,8 @@ namespace PBL3.DTO
 {
     public class PhieuNhap
     {
-        string maPhieuNhap { get; set; }
-        DateTime ngayNhap { get; set; }
-        string idtk { get; set; }
+        public string maPhieuNhap { get; set; }
+        public DateTime ngayNhap { get; set; }
+        public string idtk { get; set; }
     }
 }

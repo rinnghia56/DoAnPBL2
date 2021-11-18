@@ -8,9 +8,9 @@ namespace PBL3.DTO
 {
     public class PhieuXuat
     {
-        string maHD { get; set; }
-        DateTime ngayLap { get; set; }
-        string idTK { get; set; }
-        decimal tongTien { get; set; }
+        public string maHD { get; set; }
+        public DateTime ngayLap { get; set; }
+        public string idTK { get; set; }
+        public decimal tongTien { get; set; }
     }
 }

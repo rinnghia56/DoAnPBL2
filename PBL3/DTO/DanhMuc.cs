@@ -8,7 +8,7 @@ namespace PBL3.DTO
 {
     public class DanhMuc
     {
-        string maDm { get; set; }
-        string tenDM { get; set; }
+        public string maDm { get; set; }
+        public string tenDM { get; set; }
     }
 }
