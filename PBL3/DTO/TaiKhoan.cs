@@ -20,6 +20,12 @@ namespace PBL3.DTO
             this.hoTen = name;
             this.userRight = right;
         }
+        public TaiKhoan(string id,string name, bool right)
+        {
+            this.idTK = id;
+            this.hoTen = name;
+            this.userRight = right;
+        }
         public override string ToString()
         {
             return this.hoTen + " " + this.userRight;

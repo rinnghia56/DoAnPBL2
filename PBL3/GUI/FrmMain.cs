@@ -14,7 +14,7 @@ namespace PBL3.GUI
 {
     public partial class FrmMain : Form
     {
-
+        string idTK = "";
         string nameAccount="";   
         bool right=false; 
         
@@ -23,8 +23,10 @@ namespace PBL3.GUI
         
         public FrmMain(TaiKhoan TK)
         {
+            this.idTK = TK.idTK;
             this.nameAccount = TK.hoTen;
             this.right = TK.userRight;
+
             InitializeComponent();
         }
 
@@ -82,7 +84,7 @@ namespace PBL3.GUI
             clickButton(pnChay, pnChay_Danhmuc, pnChay_Kho, pnChay_SP);
             pnChay.Top = btnNhap.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
-            FrmNhapHang frm = new FrmNhapHang();
+            FrmNhapHang frm = new FrmNhapHang(idTK,nameAccount);
            motrangcon(frm);
         }
 

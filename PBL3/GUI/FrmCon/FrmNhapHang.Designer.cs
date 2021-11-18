@@ -195,13 +195,11 @@ namespace PBL3.GUI.FrmCon
             // 
             // cbbSanPham
             // 
-            this.cbbSanPham.BackColor = System.Drawing.Color.White;
-            this.cbbSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSanPham.FormattingEnabled = true;
-            this.cbbSanPham.Location = new System.Drawing.Point(93, 31);
+            this.cbbSanPham.Location = new System.Drawing.Point(117, 37);
             this.cbbSanPham.Name = "cbbSanPham";
-            this.cbbSanPham.Size = new System.Drawing.Size(191, 28);
-            this.cbbSanPham.TabIndex = 5;
+            this.cbbSanPham.Size = new System.Drawing.Size(175, 28);
+            this.cbbSanPham.TabIndex = 7;
             // 
             // btnUpdate
             // 
@@ -216,6 +214,7 @@ namespace PBL3.GUI.FrmCon
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -229,6 +228,7 @@ namespace PBL3.GUI.FrmCon
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSoLuong
             // 
@@ -255,6 +255,7 @@ namespace PBL3.GUI.FrmCon
             this.lvsanpham.TabIndex = 1;
             this.lvsanpham.UseCompatibleStateImageBehavior = false;
             this.lvsanpham.View = System.Windows.Forms.View.Details;
+            this.lvsanpham.SelectedIndexChanged += new System.EventHandler(this.lvsanpham_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -278,6 +279,7 @@ namespace PBL3.GUI.FrmCon
             this.mnuXoa});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(109, 30);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // mnuXoa
             // 
@@ -285,6 +287,7 @@ namespace PBL3.GUI.FrmCon
             this.mnuXoa.Name = "mnuXoa";
             this.mnuXoa.Size = new System.Drawing.Size(108, 26);
             this.mnuXoa.Text = "Xoá";
+            this.mnuXoa.Click += new System.EventHandler(this.mnuXoa_Click);
             // 
             // label8
             // 
@@ -319,6 +322,7 @@ namespace PBL3.GUI.FrmCon
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu phiếu nhập";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnTaoPhieuNhap
             // 
@@ -331,6 +335,7 @@ namespace PBL3.GUI.FrmCon
             this.btnTaoPhieuNhap.TabIndex = 3;
             this.btnTaoPhieuNhap.Text = "Tạo phiếu nhập ";
             this.btnTaoPhieuNhap.UseVisualStyleBackColor = true;
+            this.btnTaoPhieuNhap.Click += new System.EventHandler(this.btnTaoPhieuNhap_Click);
             // 
             // btnHuy
             // 
@@ -343,6 +348,7 @@ namespace PBL3.GUI.FrmCon
             this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Huỷ phiếu nhập";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // FrmNhapHang
             // 
@@ -359,6 +365,7 @@ namespace PBL3.GUI.FrmCon
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNhapHang";
             this.Text = "6";
+            this.Load += new System.EventHandler(this.FrmNhapHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -393,8 +400,8 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbbSanPham;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.ComboBox cbbSanPham;
     }
 }

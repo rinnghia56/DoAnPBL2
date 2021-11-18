@@ -8,10 +8,15 @@ namespace PBL3.DTO
 {
     public class SanPham
     {
-        string maSp{ get; set; }
-        string tenSP { get; set; }
-        string maDM { get; set; }
-        int SLTon { get; set; }
-        decimal giaBan { get; set; }
+        public string maSp{ get; set; }
+        public string tenSP { get; set; }
+        public string maDM { get; set; }
+        public int SLTon { get; set; }
+        public decimal giaBan { get; set; }
+
+        public override string ToString()
+        {
+            return maSp + " - " + tenSP;
+        }
     }
 }
