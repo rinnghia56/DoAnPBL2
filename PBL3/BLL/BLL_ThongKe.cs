@@ -39,13 +39,15 @@ namespace PBL3.BLL
             }
             else if ("".Equals(ma))
             {
-                foreach(PhieuXuat x in Dal_ThongKe.Instance.getPhieuXuatByDate_DAL(tuNgay, denNgay)){
-                    if (x.maHD.Equals(ma))
-                    pxList.add(x);
-                }
+                pxList = Dal_ThongKe.Instance.getPhieuXuatByDate_DAL(tuNgay, denNgay);
             }
             else{
-                pxList = Dal_ThongKe.Instance.getPhieuXuatByDate_DAL(tuNgay, denNgay);
+                
+                foreach (PhieuXuat x in Dal_ThongKe.Instance.getPhieuXuatByDate_DAL(tuNgay, denNgay))
+                {
+                    if (x.maHD.Contains(ma))
+                        pxList.add(x);
+                }
             }
             return pxList; 
         }
@@ -59,16 +61,35 @@ namespace PBL3.BLL
             }
             else if ("".Equals(ma))
             {
-                foreach (PhieuNhap x in Dal_ThongKe.Instance.getPhieuNhapByDate_DAL(tuNgay, denNgay))
-                {
-                    pnList.add(x);
-                }
+                
+                pnList = Dal_ThongKe.Instance.getPhieuNhapByDate_DAL(tuNgay, denNgay);
             }
             else
             {
-                pnList = Dal_ThongKe.Instance.getPhieuNhapByDate_DAL(tuNgay, denNgay);
+               
+                foreach (PhieuNhap x in Dal_ThongKe.Instance.getPhieuNhapByDate_DAL(tuNgay, denNgay))
+                {
+                    if(x.maPhieuNhap.Contains(ma))
+                    pnList.add(x);
+                }
             }
             return pnList;
+        }
+        public LinkedList<CTPhieuNhap> getCTPhieuNhapById_BLL(string ma)
+        {
+            return Dal_ThongKe.Instance.getCTPhieuNhapById(ma);
+        }
+        public LinkedList<CTPhieuXuat> getCTPhieuXuatById_BLL(string ma)
+        {
+            return Dal_ThongKe.Instance.getCTPhieuXuatById(ma);
+        }
+        public string getHotenByIDTK_BLL(string ma)
+        {
+            return Dal_ThongKe.Instance.getHotenByIDTK_DAL(ma);
+        }
+        public string getTenSanPhamByID_BLL(string ma)
+        {
+            return Dal_ThongKe.Instance.getTenSanPhambyId_DAL(ma);
         }
     }
 }
