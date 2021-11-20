@@ -31,16 +31,13 @@ namespace PBL3.GUI.FrmCon
         {
             this.components = new System.ComponentModel.Container();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_tong = new System.Windows.Forms.TextBox();
-            this.btnTong = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.btnSearchMa = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
-            this.dtThoiGianSau = new System.Windows.Forms.DateTimePicker();
+            this.dt_ThoiGianSau = new System.Windows.Forms.DateTimePicker();
             this.dt_ThgianTruoc = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +46,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mnustriptBan = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuXemCTBan = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +65,7 @@ namespace PBL3.GUI.FrmCon
             this.txtSearchMa2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dt_TimeSau = new System.Windows.Forms.DateTimePicker();
-            this.dt_timeTruoc = new System.Windows.Forms.DateTimePicker();
+            this.dt_TimeTruoc = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
@@ -83,9 +79,6 @@ namespace PBL3.GUI.FrmCon
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.txt_tong);
-            this.tabPage1.Controls.Add(this.btnTong);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.listviewKQ);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,38 +90,6 @@ namespace PBL3.GUI.FrmCon
             this.tabPage1.Text = "Bán hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(745, 81);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 25);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "VNĐ";
-            // 
-            // txt_tong
-            // 
-            this.txt_tong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tong.ForeColor = System.Drawing.Color.Blue;
-            this.txt_tong.Location = new System.Drawing.Point(492, 80);
-            this.txt_tong.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_tong.Name = "txt_tong";
-            this.txt_tong.Size = new System.Drawing.Size(224, 32);
-            this.txt_tong.TabIndex = 102;
-            // 
-            // btnTong
-            // 
-            this.btnTong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTong.Location = new System.Drawing.Point(533, 29);
-            this.btnTong.Name = "btnTong";
-            this.btnTong.Size = new System.Drawing.Size(118, 35);
-            this.btnTong.TabIndex = 3;
-            this.btnTong.Text = "Tính tổng";
-            this.btnTong.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label7);
@@ -136,7 +97,7 @@ namespace PBL3.GUI.FrmCon
             this.groupBox1.Controls.Add(this.txtMa);
             this.groupBox1.Controls.Add(this.btnSearchMa);
             this.groupBox1.Controls.Add(this.btnTim);
-            this.groupBox1.Controls.Add(this.dtThoiGianSau);
+            this.groupBox1.Controls.Add(this.dt_ThoiGianSau);
             this.groupBox1.Controls.Add(this.dt_ThgianTruoc);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label6);
@@ -169,6 +130,7 @@ namespace PBL3.GUI.FrmCon
             this.button2.TabIndex = 3;
             this.button2.Text = "Tất cả";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtMa
             // 
@@ -194,6 +156,7 @@ namespace PBL3.GUI.FrmCon
             this.btnSearchMa.Size = new System.Drawing.Size(39, 32);
             this.btnSearchMa.TabIndex = 3;
             this.btnSearchMa.UseVisualStyleBackColor = false;
+            this.btnSearchMa.Click += new System.EventHandler(this.btnSearchMa_Click);
             // 
             // btnTim
             // 
@@ -206,15 +169,16 @@ namespace PBL3.GUI.FrmCon
             this.btnTim.TabIndex = 3;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // dtThoiGianSau
+            // dt_ThoiGianSau
             // 
-            this.dtThoiGianSau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtThoiGianSau.Location = new System.Drawing.Point(226, 75);
-            this.dtThoiGianSau.Name = "dtThoiGianSau";
-            this.dtThoiGianSau.Size = new System.Drawing.Size(137, 27);
-            this.dtThoiGianSau.TabIndex = 2;
-            this.dtThoiGianSau.Value = new System.DateTime(2021, 6, 5, 0, 0, 0, 0);
+            this.dt_ThoiGianSau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_ThoiGianSau.Location = new System.Drawing.Point(226, 75);
+            this.dt_ThoiGianSau.Name = "dt_ThoiGianSau";
+            this.dt_ThoiGianSau.Size = new System.Drawing.Size(137, 27);
+            this.dt_ThoiGianSau.TabIndex = 2;
+            this.dt_ThoiGianSau.Value = new System.DateTime(2021, 6, 5, 0, 0, 0, 0);
             // 
             // dt_ThgianTruoc
             // 
@@ -258,7 +222,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
             this.columnHeader5});
             this.listviewKQ.ContextMenuStrip = this.mnustriptBan;
             this.listviewKQ.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -272,6 +235,8 @@ namespace PBL3.GUI.FrmCon
             this.listviewKQ.TabIndex = 0;
             this.listviewKQ.UseCompatibleStateImageBehavior = false;
             this.listviewKQ.View = System.Windows.Forms.View.Details;
+            this.listviewKQ.SelectedIndexChanged += new System.EventHandler(this.listviewKQ_SelectedIndexChanged);
+            this.listviewKQ.Click += new System.EventHandler(this.listviewKQ_Click);
             // 
             // columnHeader1
             // 
@@ -288,11 +253,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader3.Text = "Ngày thành toán";
             this.columnHeader3.Width = 158;
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Khách hàng";
-            this.columnHeader4.Width = 160;
-            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Tổng tiền";
@@ -305,6 +265,8 @@ namespace PBL3.GUI.FrmCon
             this.mnuXemCTBan});
             this.mnustriptBan.Name = "mnustriptBan";
             this.mnustriptBan.Size = new System.Drawing.Size(158, 28);
+            this.mnustriptBan.Opening += new System.ComponentModel.CancelEventHandler(this.mnustriptBan_Opening);
+            this.mnustriptBan.Click += new System.EventHandler(this.mnustriptBan_Click);
             // 
             // mnuXemCTBan
             // 
@@ -377,6 +339,9 @@ namespace PBL3.GUI.FrmCon
             this.mnuXemChiTietNhap});
             this.mnuStripPhieuNhap.Name = "mnuStripPhieuNhap";
             this.mnuStripPhieuNhap.Size = new System.Drawing.Size(158, 28);
+            this.mnuStripPhieuNhap.Opening += new System.ComponentModel.CancelEventHandler(this.mnuStripPhieuNhap_Opening);
+            this.mnuStripPhieuNhap.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuStripPhieuNhap_ItemClicked);
+            this.mnuStripPhieuNhap.Click += new System.EventHandler(this.mnuStripPhieuNhap_Click);
             // 
             // mnuXemChiTietNhap
             // 
@@ -393,7 +358,7 @@ namespace PBL3.GUI.FrmCon
             this.groupBox2.Controls.Add(this.txtSearchMa2);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.dt_TimeSau);
-            this.groupBox2.Controls.Add(this.dt_timeTruoc);
+            this.groupBox2.Controls.Add(this.dt_TimeTruoc);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -447,6 +412,7 @@ namespace PBL3.GUI.FrmCon
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchMa2
             // 
@@ -462,6 +428,7 @@ namespace PBL3.GUI.FrmCon
             this.txtSearchMa2.Size = new System.Drawing.Size(39, 32);
             this.txtSearchMa2.TabIndex = 105;
             this.txtSearchMa2.UseVisualStyleBackColor = false;
+            this.txtSearchMa2.Click += new System.EventHandler(this.txtSearchMa2_Click);
             // 
             // label9
             // 
@@ -481,15 +448,15 @@ namespace PBL3.GUI.FrmCon
             this.dt_TimeSau.TabIndex = 2;
             this.dt_TimeSau.Value = new System.DateTime(2021, 6, 5, 0, 0, 0, 0);
             // 
-            // dt_timeTruoc
+            // dt_TimeTruoc
             // 
-            this.dt_timeTruoc.CustomFormat = "";
-            this.dt_timeTruoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_timeTruoc.Location = new System.Drawing.Point(48, 73);
-            this.dt_timeTruoc.Name = "dt_timeTruoc";
-            this.dt_timeTruoc.Size = new System.Drawing.Size(123, 27);
-            this.dt_timeTruoc.TabIndex = 2;
-            this.dt_timeTruoc.Value = new System.DateTime(2021, 6, 5, 0, 0, 0, 0);
+            this.dt_TimeTruoc.CustomFormat = "";
+            this.dt_TimeTruoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_TimeTruoc.Location = new System.Drawing.Point(48, 73);
+            this.dt_TimeTruoc.Name = "dt_TimeTruoc";
+            this.dt_TimeTruoc.Size = new System.Drawing.Size(123, 27);
+            this.dt_TimeTruoc.TabIndex = 2;
+            this.dt_TimeTruoc.Value = new System.DateTime(2021, 6, 5, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -518,9 +485,8 @@ namespace PBL3.GUI.FrmCon
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmThongKe";
-            this.Text = "FrmThongKe";
+            this.Text = " c";
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.mnustriptBan.ResumeLayout(false);
@@ -538,22 +504,13 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListView listviewKQ;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_tong;
-        private System.Windows.Forms.Button btnTong;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.DateTimePicker dtThoiGianSau;
+        private System.Windows.Forms.DateTimePicker dt_ThoiGianSau;
         private System.Windows.Forms.DateTimePicker dt_ThgianTruoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ListView lvPhieuNhap;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -562,7 +519,7 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dt_TimeSau;
-        private System.Windows.Forms.DateTimePicker dt_timeTruoc;
+        private System.Windows.Forms.DateTimePicker dt_TimeTruoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ContextMenuStrip mnustriptBan;
@@ -577,5 +534,10 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.TextBox txtMa2;
         private System.Windows.Forms.Button txtSearchMa2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ListView listviewKQ;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

@@ -95,11 +95,29 @@ namespace PBL3.BLL
             return h;
         }
 
-       
+        public void createHD(PhieuXuat hd)
+        {
+            Dal.Instance.createHD(hd);
+        }
 
         public TaiKhoan getTkDangNhap(string username, string pw)
         {
             return Dal.Instance.getTaiKhoan(username, pw);
+        }
+
+        public void creatCtPhieuNhap(CTPhieuNhap ct)
+        {
+            Dal.Instance.creatCtPhieuNhap_Dal(ct);
+        }
+
+        public void banHang(CTPhieuXuat ct)
+        {
+            Dal.Instance.banHang_DAL(ct);
+        }
+
+        public void createChiTietHD(CTPhieuXuat ct)
+        {
+            Dal.Instance.creatCtPhieuXuat_Dal(ct);
         }
 
         public LinkedList<SanPham> getAllSP_BLL()
@@ -110,6 +128,16 @@ namespace PBL3.BLL
         public SanPham getSanPhamByID_BLL(string id)
         {
             return Dal.Instance.getSanPhamByID_DAL(id);
+        }
+
+        public void createPhieuNhap(PhieuNhap pn)
+        {
+            Dal.Instance.createPhieuNhap_Dal(pn);
+        }
+
+        public void nhapHang(CTPhieuNhap ct)
+        {
+            Dal.Instance.nhapHang_DAL(ct);
         }
     }
 }

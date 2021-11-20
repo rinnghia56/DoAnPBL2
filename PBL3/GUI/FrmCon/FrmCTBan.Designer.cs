@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3.GUI.FrmCon
 {
-    partial class FormCTBan
+    partial class FrmCTBan
     {
         /// <summary>
         /// Required designer variable.

@@ -43,7 +43,7 @@ namespace PBL3.DAL
         public LinkedList<PhieuNhap> getPhieuNhapByDate_DAL(DateTime tuNgay, DateTime denNgay)
         {
             LinkedList<PhieuNhap> pxList = new LinkedList<PhieuNhap>();
-            string query = "SELECT * FROM Phieunhap WHERE NgayLap BETWEEN '" + tuNgay + "' AND '" + denNgay + "'";
+            string query = "SELECT * FROM Phieunhap WHERE NgayNhap BETWEEN '" + tuNgay + "' AND '" + denNgay + "'";
             PhieuNhap px = new PhieuNhap();
             foreach (DataRow dr in DBHelper.Instance.GetRecord(query).Rows)
             {
@@ -112,11 +112,17 @@ namespace PBL3.DAL
         {
             return new CTPhieuXuat()
             {
-                maHD = dr["MaPhieuNhap"].ToString(),
+                maHD = dr["MaHD"].ToString(),
                 maSp = dr["MaSP"].ToString(),
                 soLuong = Int32.Parse(dr["SoLuong"].ToString()),
                 thanhTien = decimal.Parse(dr["ThanhTien"].ToString())
             };
+        }
+        public string getTenSanPhambyId_DAL(string ma)
+        {
+            string query = "SELECT TenSP FROM SanPham where MaSP = '" + ma + "'";
+            DataRow dr = DBHelper.Instance.GetRecord(query).Rows[0];
+            return dr["TenSP"].ToString();
         }
         public LinkedList<CTPhieuNhap> getCTPhieuNhapById(string id)
         {
@@ -133,7 +139,7 @@ namespace PBL3.DAL
         public LinkedList<CTPhieuXuat> getCTPhieuXuatById(string id)
         {
             LinkedList<CTPhieuXuat> ctPxList = new LinkedList<CTPhieuXuat>();
-            string query = "SELECT * FROM CT_PhieuNhap WHERE MaPhieuNhap = '" + id + "'";
+            string query = "SELECT * FROM CT_PhieuXuat WHERE MaHD = '" + id + "'";
             CTPhieuXuat  ctPx = new CTPhieuXuat();
             foreach (DataRow dr in DBHelper.Instance.GetRecord(query).Rows)
             {
@@ -141,6 +147,12 @@ namespace PBL3.DAL
                 ctPxList.add(ctPx);
             }
             return ctPxList;
+        }
+        public string getHotenByIDTK_DAL(string IDTK)
+        {
+            string query = "SELECT Hoten FROM TaiKhoan where IDTK = '" + IDTK + "'";
+            DataRow dr = DBHelper.Instance.GetRecord(query).Rows[0];
+            return dr["Hoten"].ToString();
         }
     }
 }
