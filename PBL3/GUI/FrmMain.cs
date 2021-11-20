@@ -74,7 +74,7 @@ namespace PBL3.GUI
             pnChay.Top = btnBan.Top;
             if (pnbtnKho.Height == 151) pnbtnKho.Height = 50;
             
-            FrmBanHang frm = new FrmBanHang();
+            FrmBanHang frm = new FrmBanHang(idTK, nameAccount);
             motrangcon(frm);
         }
 

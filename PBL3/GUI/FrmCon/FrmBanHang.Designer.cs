@@ -53,7 +53,7 @@ namespace PBL3.GUI.FrmCon
             this.txtTenTK = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtMaPN = new System.Windows.Forms.TextBox();
+            this.txtMaHd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,8 +77,9 @@ namespace PBL3.GUI.FrmCon
             // 
             this.mnuXoa.Image = global::PBL3.Properties.Resources.Trash_can_icon;
             this.mnuXoa.Name = "mnuXoa";
-            this.mnuXoa.Size = new System.Drawing.Size(108, 26);
+            this.mnuXoa.Size = new System.Drawing.Size(214, 26);
             this.mnuXoa.Text = "Xoá";
+            this.mnuXoa.Click += new System.EventHandler(this.mnuXoa_Click);
             // 
             // columnHeader3
             // 
@@ -139,6 +140,7 @@ namespace PBL3.GUI.FrmCon
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -152,6 +154,7 @@ namespace PBL3.GUI.FrmCon
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSoLuong
             // 
@@ -180,6 +183,7 @@ namespace PBL3.GUI.FrmCon
             this.lvsanpham.TabIndex = 1;
             this.lvsanpham.UseCompatibleStateImageBehavior = false;
             this.lvsanpham.View = System.Windows.Forms.View.Details;
+            this.lvsanpham.SelectedIndexChanged += new System.EventHandler(this.lvsanpham_SelectedIndexChanged);
             // 
             // columnHeader4
             // 
@@ -282,7 +286,7 @@ namespace PBL3.GUI.FrmCon
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenTK);
             this.groupBox1.Controls.Add(this.txtMaTK);
-            this.groupBox1.Controls.Add(this.txtMaPN);
+            this.groupBox1.Controls.Add(this.txtMaHd);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -305,16 +309,16 @@ namespace PBL3.GUI.FrmCon
             this.txtTime.Size = new System.Drawing.Size(261, 26);
             this.txtTime.TabIndex = 3;
             // 
-            // txtMaPN
+            // txtMaHd
             // 
-            this.txtMaPN.BackColor = System.Drawing.Color.Silver;
-            this.txtMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMaPN.Location = new System.Drawing.Point(148, 24);
-            this.txtMaPN.Name = "txtMaPN";
-            this.txtMaPN.ReadOnly = true;
-            this.txtMaPN.Size = new System.Drawing.Size(260, 26);
-            this.txtMaPN.TabIndex = 3;
+            this.txtMaHd.BackColor = System.Drawing.Color.Silver;
+            this.txtMaHd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtMaHd.Location = new System.Drawing.Point(148, 24);
+            this.txtMaHd.Name = "txtMaHd";
+            this.txtMaHd.ReadOnly = true;
+            this.txtMaHd.Size = new System.Drawing.Size(260, 26);
+            this.txtMaHd.TabIndex = 3;
             // 
             // label1
             // 
@@ -360,6 +364,7 @@ namespace PBL3.GUI.FrmCon
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu hoá đơn";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnTao
             // 
@@ -372,6 +377,7 @@ namespace PBL3.GUI.FrmCon
             this.btnTao.TabIndex = 7;
             this.btnTao.Text = "Tạo hoá đơn";
             this.btnTao.UseVisualStyleBackColor = true;
+            this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // btnHuy
             // 
@@ -382,8 +388,9 @@ namespace PBL3.GUI.FrmCon
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(192, 38);
             this.btnHuy.TabIndex = 6;
-            this.btnHuy.Text = "Huỷ thanh toán";
+            this.btnHuy.Text = "Huỷ hoá đơn";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // FrmBanHang
             // 
@@ -400,6 +407,7 @@ namespace PBL3.GUI.FrmCon
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBanHang";
             this.Text = "10";
+            this.Load += new System.EventHandler(this.FrmBanHang_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -431,7 +439,7 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenTK;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtMaPN;
+        private System.Windows.Forms.TextBox txtMaHd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

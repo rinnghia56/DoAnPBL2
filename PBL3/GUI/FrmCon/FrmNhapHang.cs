@@ -74,11 +74,37 @@ namespace PBL3.GUI.FrmCon
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            clear();
+            if (lvsanpham.Items.Count == 0)
+            {
+                MessageBox.Show("Hay them san pham vao danh sach");
+                return;
+            }
+            PhieuNhap pn = new PhieuNhap()
+            {
+                maPhieuNhap = txtMaPN.Text,
+                idtk = txtMaTK.Text,
+                ngayNhap = DateTime.Now
+
+            };
+            BLL_QL.Instance.createPhieuNhap(pn);
+
+            for (int i=0;i<lvsanpham.Items.Count;i++)
+            {
+                CTPhieuNhap ct = new CTPhieuNhap()
+                {
+                    maPN = pn.maPhieuNhap,
+                    maSP = lvsanpham.Items[i].SubItems[0].Text,
+                    soLuong = Convert.ToInt32(lvsanpham.Items[i].SubItems[2].Text)
+                };
+
+                BLL_QL.Instance.creatCtPhieuNhap(ct);
+                BLL_QL.Instance.nhapHang(ct);
+            }
             isFinish = true;
             MessageBox.Show("Luu thanh cong");
-        }
+            clear();
 
+        }
 
 
         void addSP(string id,SanPham sp)
