@@ -16,6 +16,8 @@ namespace PBL3.GUI.FrmCon
         public FrmThongKe()
         {
             InitializeComponent();
+            sort_cbb.Items.AddRange(new String[] {"ASC","DES" });
+            sort_cbb.SelectedIndex = 0;
         }
         public void showListPhieuNhap(string ma, bool isAll)
         {
@@ -122,10 +124,8 @@ namespace PBL3.GUI.FrmCon
             DateTime tuNgay = dt_ThgianTruoc.Value;
             DateTime denNgay = dt_ThoiGianSau.Value;
             LinkedList<PhieuXuat> pbList = BLL_ThongKe.Instance.getPhieuXuat_BLL(tuNgay, denNgay, "", true);
-            LinkedNode<PhieuXuat> start = pbList.Head;
-            LinkedNode<PhieuXuat> end = start;
-            while (end.next != null) end = end.next;
-            BLL_ThongKe.Instance.quickSortPhieuXuat(start, end);
+            String option = sort_cbb.SelectedItem as String;
+            BLL_ThongKe.Instance.SortList(pbList,option);
             listviewKQ.Items.Clear();
             foreach (PhieuXuat pn in pbList)
             {
@@ -138,5 +138,8 @@ namespace PBL3.GUI.FrmCon
 
             }
         }
+            
+        
+
     }
 }
