@@ -87,6 +87,48 @@ namespace PBL3.BLL
         {
             return Dal_ThongKe.Instance.getHotenByIDTK_DAL(ma);
         }
+        public LinkedNode<PhieuXuat> paritionLast(LinkedNode<PhieuXuat> start, LinkedNode<PhieuXuat> end)
+        {
+            LinkedNode<PhieuXuat> cur = start;
+           
+            LinkedNode<PhieuXuat> pivot_pre = start;
+       
+            PhieuXuat pivot = end.item;
+            PhieuXuat temp;
+            while (start != end)
+            {
+                if (start.item.tongTien < pivot.tongTien)
+                {
+                    pivot_pre = cur;
+                    temp = cur.item;
+                    cur.item = start.item;
+                    start.item = temp;
+                    cur = cur.next;
+                }
+                start = start.next;
+            }
+            temp = cur.item;
+            cur.item = pivot;
+            end.item = temp;
+            return pivot_pre;
+        }
+        public void quickSortPhieuXuat(LinkedNode<PhieuXuat> start, LinkedNode<PhieuXuat> end)
+        {
+            if (start == end) return;
+            LinkedNode<PhieuXuat> pivot_pre = paritionLast(start, end);
+            quickSortPhieuXuat(start, pivot_pre);
+            if (pivot_pre != null && pivot_pre == start)
+            {
+                quickSortPhieuXuat(pivot_pre.next, end);
+            }
+            else if (pivot_pre != null && pivot_pre.next != null)
+            {
+                quickSortPhieuXuat(pivot_pre.next.next, end);
+            }
+          
+        }
+        
+
         public string getTenSanPhamByID_BLL(string ma)
         {
             return Dal_ThongKe.Instance.getTenSanPhambyId_DAL(ma);
