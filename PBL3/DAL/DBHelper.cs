@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -38,10 +39,50 @@ namespace PBL3.DAL
             cnn.Close();
             return dt;
         }
+
         public void ExcuteDB(string query)
         {
             SqlCommand cmd = new SqlCommand(query, cnn);
-            cnn.Open();
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public void ProcNhapHang(CTPhieuNhap ct)
+        {
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "NhapHang";
+            cmd.Connection=cnn;
+            // @ma = 'SP002',@sl = 1
+            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = ct.maSP;
+            cmd.Parameters.Add("@sl", SqlDbType.Int).Value = ct.soLuong;
+
+            cmd.ExecuteNonQuery();
+
+            cnn.Close();
+        }
+
+        public void ProcBanHang(CTPhieuXuat ct)
+        {
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "XuatHang";
+            cmd.Connection = cnn;
+            // @ma = 'SP002',@sl = 1
+            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = ct.maSp;
+            cmd.Parameters.Add("@sl", SqlDbType.Int).Value = ct.soLuong;
             cmd.ExecuteNonQuery();
             cnn.Close();
         }

@@ -70,12 +70,58 @@ namespace PBL3.DAL
             return list;
         }
 
-        internal SanPham getSanPhamByID_DAL(string id)
+        public SanPham getSanPhamByID_DAL(string id)
         {
             string query = "select * from sanpham where masp = '"+id+"'";
             DataRow dr=DBHelper.Instance.GetRecord(query).Rows[0];
             SanPham sp = getSanPham(dr);
             return sp;
+        }
+
+        public void createPhieuNhap_Dal(PhieuNhap pn)
+        {
+            string query = "insert into phieunhap values " +
+                              "('"+pn.maPhieuNhap+"', '"
+                            +pn.ngayNhap.ToString("MM/dd/yyyy HH:mm:ss")
+                            +"', '"+pn.idtk + "')";
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
+        public void creatCtPhieuNhap_Dal(CTPhieuNhap ct)
+        {
+            string query = "insert into CT_phieunhap values " +
+                               "('" + ct.maPN + "', '"
+                             + ct.maSP
+                             + "', " + ct.soLuong + ")";
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
+        public void createHD(PhieuXuat px)
+        {
+            string query = "insert into PhieuXuat values " +
+                              "('" + px.maHD + "', '"
+                            + px.ngayLap.ToString("MM/dd/yyyy HH:mm:ss")
+                            + "', '" + px.idTK + "', '" +px.tongTien+"')";
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
+        public void banHang_DAL(CTPhieuXuat ct)
+        {
+            DBHelper.Instance.ProcBanHang(ct);
+        }
+
+        public void creatCtPhieuXuat_Dal(CTPhieuXuat ct)
+        {
+            string query = "insert into CT_phieuxuat values " +
+                               "('" + ct.maSp + "', '"
+                             + ct.maHD
+                             + "', " + ct.soLuong +",'"+ct.thanhTien +"'"+ ")";
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
+        public void nhapHang_DAL(CTPhieuNhap ct)
+        {
+            DBHelper.Instance.ProcNhapHang(ct);
         }
     }
 }

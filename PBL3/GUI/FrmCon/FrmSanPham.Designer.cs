@@ -60,6 +60,10 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.btnSort = new System.Windows.Forms.Button();
+            this.btnSerach = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -354,6 +358,10 @@ namespace PBL3.GUI.FrmCon
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnSerach);
+            this.groupBox2.Controls.Add(this.btnSort);
+            this.groupBox2.Controls.Add(this.cbbSort);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.lvSanPham);
@@ -370,7 +378,7 @@ namespace PBL3.GUI.FrmCon
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PBL3.Properties.Resources.search_icon__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(197, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -380,9 +388,9 @@ namespace PBL3.GUI.FrmCon
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(251, 25);
+            this.txtSearch.Location = new System.Drawing.Point(51, 28);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(258, 26);
+            this.txtSearch.Size = new System.Drawing.Size(180, 26);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -399,9 +407,9 @@ namespace PBL3.GUI.FrmCon
             this.lvSanPham.FullRowSelect = true;
             this.lvSanPham.GridLines = true;
             this.lvSanPham.HideSelection = false;
-            this.lvSanPham.Location = new System.Drawing.Point(3, 57);
+            this.lvSanPham.Location = new System.Drawing.Point(3, 58);
             this.lvSanPham.Name = "lvSanPham";
-            this.lvSanPham.Size = new System.Drawing.Size(696, 294);
+            this.lvSanPham.Size = new System.Drawing.Size(696, 293);
             this.lvSanPham.TabIndex = 0;
             this.lvSanPham.UseCompatibleStateImageBehavior = false;
             this.lvSanPham.View = System.Windows.Forms.View.Details;
@@ -431,6 +439,44 @@ namespace PBL3.GUI.FrmCon
             // 
             this.columnHeader5.Text = "Giá ";
             this.columnHeader5.Width = 149;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(341, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Sắp xếp theo:";
+            // 
+            // cbbSort
+            // 
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Location = new System.Drawing.Point(449, 28);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(150, 28);
+            this.cbbSort.TabIndex = 4;
+            // 
+            // btnSort
+            // 
+            this.btnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort.Location = new System.Drawing.Point(603, 26);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(93, 27);
+            this.btnSort.TabIndex = 5;
+            this.btnSort.Text = "Sort";
+            this.btnSort.UseVisualStyleBackColor = true;
+            // 
+            // btnSerach
+            // 
+            this.btnSerach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSerach.Location = new System.Drawing.Point(237, 27);
+            this.btnSerach.Name = "btnSerach";
+            this.btnSerach.Size = new System.Drawing.Size(83, 24);
+            this.btnSerach.TabIndex = 6;
+            this.btnSerach.Text = "Tìm";
+            this.btnSerach.UseVisualStyleBackColor = true;
             // 
             // FrmSanPham
             // 
@@ -493,5 +539,9 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbbSort;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSort;
+        private System.Windows.Forms.Button btnSerach;
     }
 }

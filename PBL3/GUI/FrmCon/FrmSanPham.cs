@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,11 +22,18 @@ namespace PBL3.GUI.FrmCon
         {
             
             lbDanhMuc.SelectedIndex = -1;
-            
-            
+            string[] str = {"Tên","Số lượng","Giá bán" };
+            for(int i = 0; i < 3; i++)
+            {
+                ComboBoxItem Cbb = new ComboBoxItem(i + "", str[i]);
+                cbbSort.Items.Add(Cbb);
+            }
+
+
+
         }
 
-        
+
 
         private void lbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
