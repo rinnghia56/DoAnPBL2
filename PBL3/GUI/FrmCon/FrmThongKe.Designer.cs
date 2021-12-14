@@ -31,6 +31,8 @@ namespace PBL3.GUI.FrmCon
         {
             this.components = new System.ComponentModel.Container();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.sort_cbb = new System.Windows.Forms.ComboBox();
+            this.Sort = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -79,6 +81,8 @@ namespace PBL3.GUI.FrmCon
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.sort_cbb);
+            this.tabPage1.Controls.Add(this.Sort);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.listviewKQ);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,6 +93,24 @@ namespace PBL3.GUI.FrmCon
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bán hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // sort_cbb
+            // 
+            this.sort_cbb.FormattingEnabled = true;
+            this.sort_cbb.Location = new System.Drawing.Point(433, 114);
+            this.sort_cbb.Name = "sort_cbb";
+            this.sort_cbb.Size = new System.Drawing.Size(121, 32);
+            this.sort_cbb.TabIndex = 4;
+            // 
+            // Sort
+            // 
+            this.Sort.Location = new System.Drawing.Point(433, 78);
+            this.Sort.Name = "Sort";
+            this.Sort.Size = new System.Drawing.Size(91, 30);
+            this.Sort.TabIndex = 3;
+            this.Sort.Text = "Sort";
+            this.Sort.UseVisualStyleBackColor = true;
+            this.Sort.Click += new System.EventHandler(this.Sort_Click);
             // 
             // groupBox1
             // 
@@ -539,5 +561,7 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button Sort;
+        private System.Windows.Forms.ComboBox sort_cbb;
     }
 }
