@@ -87,78 +87,56 @@ namespace PBL3.BLL
         {
             return Dal_ThongKe.Instance.getHotenByIDTK_DAL(ma);
         }
-        public LinkedNode<PhieuXuat> paritionLast(LinkedNode<PhieuXuat> start, LinkedNode<PhieuXuat> end,Func<decimal,decimal,bool> checkSort)
+        public void sortPhieuXuat(LinkedList<PhieuXuat> pxList, String option)
         {
-            if (start == end || start == null || end == null)
-                return start;
-            LinkedNode<PhieuXuat> cur = start;
-           
-            LinkedNode<PhieuXuat> pivot_pre = start;
-       
-            PhieuXuat pivot = end.item;
-            PhieuXuat temp;
-            while (start != end)
-            {
-                 if (checkSort(start.item.tongTien,pivot.tongTien))
-                {
-                    pivot_pre = cur;
-                    temp = cur.item;
-                    cur.item = start.item;
-                    start.item = temp;
-                    cur = cur.next;
-                }
-                start = start.next;
-            }
-            temp = cur.item;
-            cur.item = pivot;
-            end.item = temp;
-            return pivot_pre;
-        }
-        public void SortList(LinkedList<PhieuXuat> pxList, String option)
-        {
-            LinkedNode<PhieuXuat> start = pxList.Head;
-            if (start != null)
-            {
-                LinkedNode<PhieuXuat> end = start;
-                while (end.next != null) end = end.next;
 
                 switch (option)
                 {
                     case "ASC":
-                        quickSortPhieuXuat(start, end, sortASC);
+                    pxList.sort(sortTASC);
                         break;
                     case "DES":
-                        quickSortPhieuXuat(start, end, sortDES);
+                    pxList.sort(sortTDES);
                         break;
                     default:
-                        quickSortPhieuXuat(start, end, sortASC);
-                        break;
+                    pxList.sort(sortTASC);
+                    break;
 
                 }
             }
-        }
-        public bool sortDES(decimal t1,decimal t2)
+        public void sortPhieuNhap(LinkedList<PhieuNhap> pnList,String option)
         {
-            return t1 > t2;
-        }
-        public bool sortASC(decimal t1, decimal t2)
-        {
-            return t1 < t2;
-        }
-        public void quickSortPhieuXuat(LinkedNode<PhieuXuat> start, LinkedNode<PhieuXuat> end, Func<decimal, decimal, bool> checkSort)
-        {
-            if (start == end) return;
-             LinkedNode<PhieuXuat> pivot_pre = paritionLast(start, end,checkSort);
-            quickSortPhieuXuat(start, pivot_pre,checkSort);
-            if (pivot_pre != null && pivot_pre == start)
+            switch (option)
             {
-                quickSortPhieuXuat(pivot_pre.next, end, checkSort);
+                case "ASC":
+                    pnList.sort(sortDateASC);
+                    break;
+                case "DES":
+                    pnList.sort(sortDateDes);
+                    break;
+                default:
+                    pnList.sort(sortDateASC);
+                    break;
+
             }
-            else if (pivot_pre != null && pivot_pre.next != null)
-            {
-                quickSortPhieuXuat(pivot_pre.next.next, end, checkSort);
-            }
-          
+        }
+
+        private bool sortDateDes(PhieuNhap t1,PhieuNhap t2) { 
+
+            return t1.ngayNhap > t2.ngayNhap;
+        }
+        private bool sortDateASC(PhieuNhap t1, PhieuNhap t2)
+        {
+            Console.WriteLine(t1.ngayNhap > t2.ngayNhap);
+            return t1.ngayNhap < t2.ngayNhap;
+        }
+        private bool sortTDES(PhieuXuat t1, PhieuXuat t2)
+        {
+            return t1.tongTien > t2.tongTien;
+        }
+        private bool sortTASC(PhieuXuat t1, PhieuXuat t2)
+        {
+            return t1.tongTien < t2.tongTien;
         }
         
 

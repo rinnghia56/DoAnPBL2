@@ -16,8 +16,16 @@ namespace PBL3.GUI.FrmCon
         public FrmThongKe()
         {
             InitializeComponent();
-            sort_cbb.Items.AddRange(new String[] {"ASC","DES" });
+            setCBB();
+        }
+        public void setCBB()
+        {
+            sort_cbb.Items.AddRange(new ComboBoxItem[] {new ComboBoxItem {valueMember = "ASC",displayMeber = "Tăng dần"},
+            new ComboBoxItem { valueMember = "DES",displayMeber = "Giảm dần"} });
             sort_cbb.SelectedIndex = 0;
+            cbb_sortN.Items.AddRange(new ComboBoxItem[] {new ComboBoxItem {valueMember = "ASC",displayMeber = "Tăng dần"},
+            new ComboBoxItem { valueMember = "DES",displayMeber = "Giảm dần"} });
+            cbb_sortN.SelectedIndex = 0;
         }
         public void showListPhieuNhap(string ma, bool isAll)
         {
@@ -124,8 +132,8 @@ namespace PBL3.GUI.FrmCon
             DateTime tuNgay = dt_ThgianTruoc.Value;
             DateTime denNgay = dt_ThoiGianSau.Value;
             LinkedList<PhieuXuat> pbList = BLL_ThongKe.Instance.getPhieuXuat_BLL(tuNgay, denNgay, "", true);
-            String option = sort_cbb.SelectedItem as String;
-            BLL_ThongKe.Instance.SortList(pbList,option);
+            String option = (sort_cbb.SelectedItem as ComboBoxItem).valueMember;
+            BLL_ThongKe.Instance.sortPhieuXuat(pbList,option);
             listviewKQ.Items.Clear();
             foreach (PhieuXuat pn in pbList)
             {
@@ -138,8 +146,24 @@ namespace PBL3.GUI.FrmCon
 
             }
         }
-            
-        
 
+        private void sortN_btn_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dt_ThgianTruoc.Value;
+            DateTime denNgay = dt_ThoiGianSau.Value;
+            LinkedList<PhieuNhap> pnList = BLL_ThongKe.Instance.getPhieuNhap_BLL(tuNgay, denNgay, "", true);
+            String option = (cbb_sortN.SelectedItem as ComboBoxItem).valueMember;
+            BLL_ThongKe.Instance.sortPhieuNhap(pnList, option);
+            lvPhieuNhap.Items.Clear();
+            foreach (PhieuNhap pn in pnList)
+            {
+                ListViewItem listViewItem = new ListViewItem();
+                listViewItem.Text = pn.maPhieuNhap;
+                listViewItem.SubItems.Add(BLL_ThongKe.Instance.getHotenByIDTK_BLL(pn.idtk));
+                listViewItem.SubItems.Add(pn.ngayNhap.ToString());
+                lvPhieuNhap.Items.Add(listViewItem);
+
+            }
+        }
     }
 }
