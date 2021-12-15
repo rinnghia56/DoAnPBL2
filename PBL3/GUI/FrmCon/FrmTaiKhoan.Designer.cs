@@ -115,7 +115,6 @@ namespace PBL3.GUI.FrmCon
             this.txtMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMa.Location = new System.Drawing.Point(139, 24);
             this.txtMa.Name = "txtMa";
-            this.txtMa.ReadOnly = true;
             this.txtMa.Size = new System.Drawing.Size(237, 26);
             this.txtMa.TabIndex = 13;
             // 
@@ -189,7 +188,6 @@ namespace PBL3.GUI.FrmCon
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(139, 66);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(237, 26);
             this.txtUsername.TabIndex = 1;
             // 
@@ -240,6 +238,7 @@ namespace PBL3.GUI.FrmCon
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -263,9 +262,10 @@ namespace PBL3.GUI.FrmCon
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(141, 39);
             this.btnThem.TabIndex = 11;
-            this.btnThem.Text = "Thêm mới";
+            this.btnThem.Text = "Thêm ";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtpass2
             // 
@@ -324,7 +324,6 @@ namespace PBL3.GUI.FrmCon
 
         private System.Windows.Forms.ListView lvTaiKhoan;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
@@ -346,5 +345,6 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.TextBox txtpass2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMa;
     }
 }

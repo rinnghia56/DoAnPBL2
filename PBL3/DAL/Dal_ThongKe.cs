@@ -143,6 +143,7 @@ namespace PBL3.DAL
             CTPhieuXuat  ctPx = new CTPhieuXuat();
             foreach (DataRow dr in DBHelper.Instance.GetRecord(query).Rows)
             {
+
                 ctPx = getCTPhieuXuat(dr);
                 ctPxList.add(ctPx);
             }

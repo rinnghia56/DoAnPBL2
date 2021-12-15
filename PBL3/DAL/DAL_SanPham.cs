@@ -41,6 +41,7 @@ namespace PBL3.DAL
             foreach (DataRow dr in DBHelper.Instance.GetRecord(query).Rows)
             {
                 sp = getSanPham(dr);
+
                 spList.add(sp);
             }
             return spList;
@@ -49,15 +50,50 @@ namespace PBL3.DAL
         {
             return new SanPham()
             {
-                maSp = dr["MaSp"].ToString(),
-                tenSP = dr["tenSp"].ToString(),
-                maDM = dr["maDM"].ToString(),
+                maSp = dr["MaSP"].ToString(),
+                tenSP = dr["TenSP"].ToString(),
+                maDM = dr["MaDM"].ToString(),
                 SLTon = int.Parse(dr["SLTon"].ToString()),
-                giaBan = int.Parse(dr["giaBan"].ToString())
+                giaBan = decimal.Parse(dr["GiaBan"].ToString())
 
             };
         }
-       
-       
+        
+        public void deleteSP_DAL(string idSp)
+        {
+            LinkedList<SanPham> spList = new LinkedList<SanPham>();
+            string query = "delete from SanPham where MaSp = '" + idSp +
+                "'"; DBHelper.Instance.ExcuteDB(query);
+        }
+        // add 
+        public void AddSP_DAL(SanPham sp)
+        {
+            string query = string.Format("Insert into SanPham values('{0}','{1}','{2}','{3}','{4}')",
+                sp.maSp, sp.tenSP, sp.maDM, sp.SLTon, (sp.giaBan));
+            DBHelper.Instance.ExcuteDB(query);
+        }
+        public void EditSP_DAL(SanPham sp)
+        {
+            string query = "update SanPham set TenSP = '" + sp.tenSP + "'," + "MaDM = " + sp.maDM + "SLTon = " + sp.SLTon + "GiaBan = " + sp.giaBan + "'";
+            DBHelper.Instance.ExcuteDB(query);
+        }
+        public LinkedList<SanPham> getSPbyIDDM(string madm)
+        {
+            LinkedList<SanPham> spList = new LinkedList<SanPham>();
+            string query = string.Format(" select * from SanPham where maDM = '{0}'", madm);
+            SanPham sp = new SanPham();
+            foreach (DataRow dr in DBHelper.Instance.GetRecord(query).Rows)
+            {
+                sp = getSanPham(dr);
+
+                spList.add(sp);
+            }
+            return spList;
+
+        }
+
+
+
+
     }
 }

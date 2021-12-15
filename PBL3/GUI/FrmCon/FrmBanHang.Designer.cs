@@ -77,7 +77,7 @@ namespace PBL3.GUI.FrmCon
             // 
             this.mnuXoa.Image = global::PBL3.Properties.Resources.Trash_can_icon;
             this.mnuXoa.Name = "mnuXoa";
-            this.mnuXoa.Size = new System.Drawing.Size(214, 26);
+            this.mnuXoa.Size = new System.Drawing.Size(108, 26);
             this.mnuXoa.Text = "Xoá";
             this.mnuXoa.Click += new System.EventHandler(this.mnuXoa_Click);
             // 
@@ -106,6 +106,7 @@ namespace PBL3.GUI.FrmCon
             this.cbbSanPham.Name = "cbbSanPham";
             this.cbbSanPham.Size = new System.Drawing.Size(191, 28);
             this.cbbSanPham.TabIndex = 19;
+            this.cbbSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbSanPham_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -319,6 +320,7 @@ namespace PBL3.GUI.FrmCon
             this.txtMaHd.ReadOnly = true;
             this.txtMaHd.Size = new System.Drawing.Size(260, 26);
             this.txtMaHd.TabIndex = 3;
+            this.txtMaHd.TextChanged += new System.EventHandler(this.txtMaHd_TextChanged);
             // 
             // label1
             // 

@@ -19,7 +19,7 @@ namespace PBL3.DAL
             {
                 if (_Instance == null)
                 {
-                    string cnnstr = @" Data Source=LAPTOP-013CEDQ8\SQLEXPRESS;Initial Catalog=PBL2;Integrated Security = True";
+                    string cnnstr = @" Data Source=OS;Initial Catalog=PBL2;Integrated Security = True";
                     _Instance = new DBHelper(cnnstr);
                 }
                 return _Instance;

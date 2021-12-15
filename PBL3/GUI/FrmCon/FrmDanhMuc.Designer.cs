@@ -79,7 +79,6 @@ namespace PBL3.GUI.FrmCon
             this.txtMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMa.Location = new System.Drawing.Point(89, 43);
             this.txtMa.Name = "txtMa";
-            this.txtMa.ReadOnly = true;
             this.txtMa.Size = new System.Drawing.Size(289, 26);
             this.txtMa.TabIndex = 3;
             // 
@@ -130,7 +129,7 @@ namespace PBL3.GUI.FrmCon
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(122, 45);
             this.btnThem.TabIndex = 4;
-            this.btnThem.Text = "Thêm mới";
+            this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -178,7 +177,6 @@ namespace PBL3.GUI.FrmCon
             this.lvDanhMuc.TabIndex = 6;
             this.lvDanhMuc.UseCompatibleStateImageBehavior = false;
             this.lvDanhMuc.View = System.Windows.Forms.View.Details;
-            this.lvDanhMuc.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -211,7 +209,7 @@ namespace PBL3.GUI.FrmCon
             this.txtUsername.Size = new System.Drawing.Size(261, 19);
             this.txtUsername.TabIndex = 19;
             this.txtUsername.Text = "Search...";
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // panel1
             // 

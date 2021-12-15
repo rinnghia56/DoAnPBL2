@@ -53,5 +53,23 @@ namespace PBL3.DAL
                 password = dr["password"].ToString()
             };
         }
+        public void deleteTK_DAL(string idtk)
+        {
+            LinkedList<TaiKhoan> spList = new LinkedList<TaiKhoan>();
+            string query = "delete from TaiKhoan where IDTK = '" + idtk +
+                "'"; DBHelper.Instance.ExcuteDB(query);
+        }
+        // add 
+        public void AddTK_DAL(TaiKhoan tk)
+        {
+            string query = string.Format("Insert into TaiKhoan values('{0}','{1}','{2}','{3}','{4}','{5}')",
+                tk.idTK, tk.hoTen,tk.SDT,tk.username,tk.password,tk.userRight);
+            DBHelper.Instance.ExcuteDB(query);
+        }
+        public void EditTK_DAL(TaiKhoan tk)
+        {
+            string query = "update TaiKhoan set HoTen = '" + tk.hoTen + "'," + "IDTK = " + tk.idTK + "SDT = " + tk.SDT + "Username = " + tk.username + "UserRight = " + tk.userRight + "'";
+            DBHelper.Instance.ExcuteDB(query);
+        }
     }
 }

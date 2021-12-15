@@ -26,7 +26,7 @@ namespace PBL3.GUI.FrmCon
             {
                 ListViewItem listViewItem = new ListViewItem();
                 listViewItem.Text = pn.maPhieuNhap;
-                listViewItem.SubItems.Add(BLL_ThongKe.Instance.getHotenByIDTK_BLL(pn.idtk));
+                listViewItem.SubItems.Add(BLL_ThongKe.Instance.getHotenByIDTK_BLL(pn.idtk)); 
                 listViewItem.SubItems.Add(pn.ngayNhap.ToString());
                 lvPhieuNhap.Items.Add(listViewItem);
 

@@ -266,5 +266,15 @@ namespace PBL3.GUI.FrmCon
                 }
             }
         }
+
+        private void cbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaHd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

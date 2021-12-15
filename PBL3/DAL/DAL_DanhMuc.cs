@@ -51,5 +51,45 @@ namespace PBL3.DAL
                 tenDM = dr["tenDm"].ToString()
             };
         }
+        public LinkedList<DanhMuc> getTenDanhMuc_DAL()
+        {
+            LinkedList<DanhMuc> ldm = new LinkedList<DanhMuc>();
+            string query = "select * from DanhMuc";
+            DanhMuc dm = new DanhMuc();
+            foreach (DataRow dr in DBHelper.Instance.GetRecord(query).Rows)
+            {
+                dm = getTenDanhMuc(dr);
+                ldm.add(dm);
+                
+            }
+            return ldm;
+        }
+
+        private DanhMuc getTenDanhMuc(DataRow dr)
+        {
+            return new DanhMuc()
+            {
+                tenDM = dr["tenDm"].ToString(),
+                maDm =dr["maDM"].ToString()
+            };
+        }
+        public void deleteDM_DAL(string iddm)
+        {
+            LinkedList<DanhMuc> spList = new LinkedList<DanhMuc>();
+            string query = "delete from DanhMuc where MaDm = '" + iddm +
+                "'"; DBHelper.Instance.ExcuteDB(query);
+        }
+        // add 
+        public void AddDM_DAL(DanhMuc dm)
+        {
+            string query = string.Format("Insert into DanhMuc values('{0}','{1}')",
+                dm.maDm, dm.tenDM);
+            DBHelper.Instance.ExcuteDB(query);
+        }
+        public void EditDM_DAL(DanhMuc dm)
+        {
+            string query = "update DanhMuc set TenDM = '" + dm.tenDM + "'," + "MaDM = " + dm.maDm + "'";
+            DBHelper.Instance.ExcuteDB(query);
+        }
     }
 }

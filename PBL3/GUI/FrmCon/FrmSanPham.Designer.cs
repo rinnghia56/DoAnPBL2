@@ -33,18 +33,17 @@ namespace PBL3.GUI.FrmCon
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbDanhMuc = new System.Windows.Forms.ListBox();
-            this.btnAll = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMA = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtMa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace PBL3.GUI.FrmCon
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAll = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lvSanPham = new System.Windows.Forms.ListView();
@@ -60,10 +60,6 @@ namespace PBL3.GUI.FrmCon
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbbSort = new System.Windows.Forms.ComboBox();
-            this.btnSort = new System.Windows.Forms.Button();
-            this.btnSerach = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -109,7 +105,6 @@ namespace PBL3.GUI.FrmCon
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
             this.groupBox1.Controls.Add(this.lbDanhMuc);
-            this.groupBox1.Controls.Add(this.btnAll);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -132,32 +127,21 @@ namespace PBL3.GUI.FrmCon
             this.lbDanhMuc.Size = new System.Drawing.Size(168, 564);
             this.lbDanhMuc.TabIndex = 2;
             this.lbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.lbDanhMuc_SelectedIndexChanged);
-            // 
-            // btnAll
-            // 
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.ForeColor = System.Drawing.Color.Black;
-            this.btnAll.Location = new System.Drawing.Point(24, 20);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(116, 32);
-            this.btnAll.TabIndex = 0;
-            this.btnAll.Text = "Tất cả";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.button1_Click);
+            this.lbDanhMuc.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbDanhMuc_MouseDoubleClick);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Silver;
+            this.groupBox3.Controls.Add(this.txtMA);
             this.groupBox3.Controls.Add(this.btnXoa);
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btn_luu);
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.cbbDanhMuc);
             this.groupBox3.Controls.Add(this.txtDonGia);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btn_them);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(this.txtTen);
             this.groupBox3.Controls.Add(this.txtSoLuong);
-            this.groupBox3.Controls.Add(this.txtMa);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
@@ -172,7 +156,15 @@ namespace PBL3.GUI.FrmCon
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết sản phẩm";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // txtMA
+            // 
+            this.txtMA.BackColor = System.Drawing.Color.White;
+            this.txtMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMA.Location = new System.Drawing.Point(129, 27);
+            this.txtMA.Name = "txtMA";
+            this.txtMA.Size = new System.Drawing.Size(191, 26);
+            this.txtMA.TabIndex = 19;
             // 
             // btnXoa
             // 
@@ -184,23 +176,23 @@ namespace PBL3.GUI.FrmCon
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(107, 39);
             this.btnXoa.TabIndex = 6;
-            this.btnXoa.Text = "Xoá";
+            this.btnXoa.Text = "Clear";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button2
+            // btn_luu
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::PBL3.Properties.Resources.Save_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(311, 200);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 39);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btn_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.ForeColor = System.Drawing.Color.Black;
+            this.btn_luu.Image = global::PBL3.Properties.Resources.Save_icon;
+            this.btn_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_luu.Location = new System.Drawing.Point(311, 200);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(107, 39);
+            this.btn_luu.TabIndex = 7;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // btnLuu
             // 
@@ -213,7 +205,6 @@ namespace PBL3.GUI.FrmCon
             this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cbbDanhMuc
             // 
@@ -224,7 +215,6 @@ namespace PBL3.GUI.FrmCon
             this.cbbDanhMuc.Name = "cbbDanhMuc";
             this.cbbDanhMuc.Size = new System.Drawing.Size(191, 28);
             this.cbbDanhMuc.TabIndex = 18;
-            this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbbDanhMuc_SelectedIndexChanged);
             // 
             // txtDonGia
             // 
@@ -235,20 +225,20 @@ namespace PBL3.GUI.FrmCon
             this.txtDonGia.Size = new System.Drawing.Size(173, 26);
             this.txtDonGia.TabIndex = 14;
             // 
-            // button1
+            // btn_them
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(145, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 39);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Thêm mới";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnThem_Click);
+            this.btn_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.ForeColor = System.Drawing.Color.Black;
+            this.btn_them.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
+            this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_them.Location = new System.Drawing.Point(145, 200);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(134, 39);
+            this.btn_them.TabIndex = 8;
+            this.btn_them.Text = "Thêm";
+            this.btn_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btnThem
             // 
@@ -262,7 +252,6 @@ namespace PBL3.GUI.FrmCon
             this.btnThem.Text = "Thêm mới";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtTen
             // 
@@ -281,16 +270,6 @@ namespace PBL3.GUI.FrmCon
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(173, 26);
             this.txtSoLuong.TabIndex = 16;
-            // 
-            // txtMa
-            // 
-            this.txtMa.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMa.Location = new System.Drawing.Point(129, 34);
-            this.txtMa.Name = "txtMa";
-            this.txtMa.ReadOnly = true;
-            this.txtMa.Size = new System.Drawing.Size(191, 26);
-            this.txtMa.TabIndex = 17;
             // 
             // label5
             // 
@@ -358,10 +337,7 @@ namespace PBL3.GUI.FrmCon
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnSerach);
-            this.groupBox2.Controls.Add(this.btnSort);
-            this.groupBox2.Controls.Add(this.cbbSort);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.btnAll);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.lvSanPham);
@@ -373,7 +349,18 @@ namespace PBL3.GUI.FrmCon
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sản phẩm";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnAll
+            // 
+            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.ForeColor = System.Drawing.Color.Black;
+            this.btnAll.Location = new System.Drawing.Point(247, 25);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(116, 29);
+            this.btnAll.TabIndex = 0;
+            this.btnAll.Text = "Tất cả";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // pictureBox1
             // 
@@ -413,7 +400,6 @@ namespace PBL3.GUI.FrmCon
             this.lvSanPham.TabIndex = 0;
             this.lvSanPham.UseCompatibleStateImageBehavior = false;
             this.lvSanPham.View = System.Windows.Forms.View.Details;
-            this.lvSanPham.SelectedIndexChanged += new System.EventHandler(this.lvSanPham_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -439,44 +425,6 @@ namespace PBL3.GUI.FrmCon
             // 
             this.columnHeader5.Text = "Giá ";
             this.columnHeader5.Width = 149;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(341, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Sắp xếp theo:";
-            // 
-            // cbbSort
-            // 
-            this.cbbSort.FormattingEnabled = true;
-            this.cbbSort.Location = new System.Drawing.Point(449, 28);
-            this.cbbSort.Name = "cbbSort";
-            this.cbbSort.Size = new System.Drawing.Size(150, 28);
-            this.cbbSort.TabIndex = 4;
-            // 
-            // btnSort
-            // 
-            this.btnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort.Location = new System.Drawing.Point(603, 26);
-            this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(93, 27);
-            this.btnSort.TabIndex = 5;
-            this.btnSort.Text = "Sort";
-            this.btnSort.UseVisualStyleBackColor = true;
-            // 
-            // btnSerach
-            // 
-            this.btnSerach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSerach.Location = new System.Drawing.Point(237, 27);
-            this.btnSerach.Name = "btnSerach";
-            this.btnSerach.Size = new System.Drawing.Size(83, 24);
-            this.btnSerach.TabIndex = 6;
-            this.btnSerach.Text = "Tìm";
-            this.btnSerach.UseVisualStyleBackColor = true;
             // 
             // FrmSanPham
             // 
@@ -531,17 +479,13 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbbSort;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnSort;
-        private System.Windows.Forms.Button btnSerach;
+        private System.Windows.Forms.Button btn_luu;
+        private System.Windows.Forms.Button btn_them;
+        private System.Windows.Forms.TextBox txtMA;
     }
 }
