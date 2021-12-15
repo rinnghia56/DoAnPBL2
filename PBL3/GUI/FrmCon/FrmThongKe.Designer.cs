@@ -70,6 +70,8 @@ namespace PBL3.GUI.FrmCon
             this.dt_TimeTruoc = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbb_sortN = new System.Windows.Forms.ComboBox();
+            this.sortN_btn = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.mnustriptBan.SuspendLayout();
@@ -106,9 +108,9 @@ namespace PBL3.GUI.FrmCon
             // 
             this.Sort.Location = new System.Drawing.Point(433, 78);
             this.Sort.Name = "Sort";
-            this.Sort.Size = new System.Drawing.Size(91, 30);
+            this.Sort.Size = new System.Drawing.Size(121, 30);
             this.Sort.TabIndex = 3;
-            this.Sort.Text = "Sort";
+            this.Sort.Text = "Sắp xếp";
             this.Sort.UseVisualStyleBackColor = true;
             this.Sort.Click += new System.EventHandler(this.Sort_Click);
             // 
@@ -310,6 +312,8 @@ namespace PBL3.GUI.FrmCon
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.sortN_btn);
+            this.tabPage2.Controls.Add(this.cbb_sortN);
             this.tabPage2.Controls.Add(this.lvPhieuNhap);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
@@ -498,6 +502,24 @@ namespace PBL3.GUI.FrmCon
             this.label5.TabIndex = 1;
             this.label5.Text = "Từ";
             // 
+            // cbb_sortN
+            // 
+            this.cbb_sortN.FormattingEnabled = true;
+            this.cbb_sortN.Location = new System.Drawing.Point(473, 113);
+            this.cbb_sortN.Name = "cbb_sortN";
+            this.cbb_sortN.Size = new System.Drawing.Size(121, 32);
+            this.cbb_sortN.TabIndex = 5;
+            // 
+            // sortN_btn
+            // 
+            this.sortN_btn.Location = new System.Drawing.Point(473, 69);
+            this.sortN_btn.Name = "sortN_btn";
+            this.sortN_btn.Size = new System.Drawing.Size(106, 37);
+            this.sortN_btn.TabIndex = 6;
+            this.sortN_btn.Text = "Sắp xếp";
+            this.sortN_btn.UseVisualStyleBackColor = true;
+            this.sortN_btn.Click += new System.EventHandler(this.sortN_btn_Click);
+            // 
             // FrmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -563,5 +585,7 @@ namespace PBL3.GUI.FrmCon
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button Sort;
         private System.Windows.Forms.ComboBox sort_cbb;
+        private System.Windows.Forms.Button sortN_btn;
+        private System.Windows.Forms.ComboBox cbb_sortN;
     }
 }
