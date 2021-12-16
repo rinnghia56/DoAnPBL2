@@ -47,7 +47,6 @@ namespace PBL3
             if (cur == null)
             {
                 head = node;
-                //   head.next = null;
             }
             else
             {
@@ -62,23 +61,26 @@ namespace PBL3
         public void DisplayAll()
         {
             LinkedNode<T> cur = Head;
+            int i = 0;
             while (cur != null)
             {
-                Console.WriteLine(cur.item.ToString());
+                Console.WriteLine( i++  + " " + cur.item.ToString());
                 cur = cur.next;
             }
         }
         public LinkedNode<T> paritionLast(LinkedNode<T> start, LinkedNode<T> end, Func<T, T, bool> checkSort)
         {
-            if (start == end || start == null || end == null)
-                return start;
+            if (start == end || start == null || end == null) return start;
+
             LinkedNode<T> cur = start;
 
             LinkedNode<T> pivot_pre = start;
-
+            
             T pivot = end.item;
             T temp;
-            while (start != end)
+         
+            DisplayAll();
+            while (start != end )
             {
                 if (checkSort(start.item, pivot))
                 {
@@ -116,7 +118,7 @@ namespace PBL3
             }
             else if (pivot_pre != null && pivot_pre.next != null)
             {
-                quickSort(pivot_pre.next.next, end, checkSort);
+                quickSort(pivot_pre.next, end, checkSort);
             }
 
         }
