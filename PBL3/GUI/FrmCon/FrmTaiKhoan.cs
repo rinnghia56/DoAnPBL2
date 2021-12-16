@@ -24,6 +24,7 @@ namespace PBL3.GUI.FrmCon
         }
         public void ShowListTaiKhoan(String idtk)
         {
+            lvTaiKhoan.Items.Clear();
             foreach (TaiKhoan sp in BLL_TaiKhoan.Instance.getTaiKhoan_BLL(idtk))
             {
                 ListViewItem listViewItem = new ListViewItem();
@@ -114,6 +115,7 @@ namespace PBL3.GUI.FrmCon
         private void btnLuu_Click(object sender, EventArgs e)
         {
             /*string id = (cbbDanhMuc.SelectedItem as ComboBoxItem).valueMember;*/
+            lvTaiKhoan.SelectedItems.Clear();
             TaiKhoan tk = new TaiKhoan
             {
                 idTK = txtMa.Text,
@@ -148,6 +150,36 @@ namespace PBL3.GUI.FrmCon
             {
                 MessageBox.Show(">>>>>>>>>");
             }
+        }
+
+        private void lvTaiKhoan_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (lvTaiKhoan.SelectedItems.Count > 0)
+                {
+
+                    String ma = lvTaiKhoan.SelectedItems[0].SubItems[0].Text;
+                    String ten = lvTaiKhoan.SelectedItems[0].SubItems[1].Text;
+                    String mam = lvTaiKhoan.SelectedItems[0].SubItems[2].Text;
+                    String solo = (lvTaiKhoan.SelectedItems[0].SubItems[3].Text);
+                    String user = (lvTaiKhoan.SelectedItems[0].SubItems[4].Text);
+                    
+                    txtMa.Text = ma;
+                    txtName.Text = ten;
+                    txtSDT.Text = mam;
+                    txtUsername.Text = solo;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

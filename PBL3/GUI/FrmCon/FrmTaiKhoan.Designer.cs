@@ -74,6 +74,7 @@ namespace PBL3.GUI.FrmCon
             this.lvTaiKhoan.TabIndex = 16;
             this.lvTaiKhoan.UseCompatibleStateImageBehavior = false;
             this.lvTaiKhoan.View = System.Windows.Forms.View.Details;
+            this.lvTaiKhoan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTaiKhoan_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -153,6 +154,7 @@ namespace PBL3.GUI.FrmCon
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(237, 26);
             this.txtSDT.TabIndex = 3;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // label4
             // 

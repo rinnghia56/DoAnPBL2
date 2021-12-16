@@ -151,5 +151,24 @@ namespace PBL3.GUI.FrmCon
                 MessageBox.Show(">>>>>>>>>");
             }
         }
+
+        private void lvDanhMuc_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lvDanhMuc.SelectedItems.Count > 0)
+                {
+
+                    String ma = lvDanhMuc.SelectedItems[0].SubItems[0].Text;
+                    String ten = lvDanhMuc.SelectedItems[0].SubItems[1].Text;
+                    txtMa.Text = ma;
+                    txtTen.Text = ten;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
     }
 }

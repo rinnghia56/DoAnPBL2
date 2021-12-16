@@ -186,7 +186,7 @@ namespace PBL3.GUI.FrmCon
             this.btn_luu.ForeColor = System.Drawing.Color.Black;
             this.btn_luu.Image = global::PBL3.Properties.Resources.Save_icon;
             this.btn_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_luu.Location = new System.Drawing.Point(311, 200);
+            this.btn_luu.Location = new System.Drawing.Point(310, 200);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(107, 39);
             this.btn_luu.TabIndex = 7;
@@ -199,7 +199,7 @@ namespace PBL3.GUI.FrmCon
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = global::PBL3.Properties.Resources.Save_icon;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(311, 200);
+            this.btnLuu.Location = new System.Drawing.Point(310, 200);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(107, 39);
             this.btnLuu.TabIndex = 7;
@@ -231,7 +231,7 @@ namespace PBL3.GUI.FrmCon
             this.btn_them.ForeColor = System.Drawing.Color.Black;
             this.btn_them.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
             this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_them.Location = new System.Drawing.Point(145, 200);
+            this.btn_them.Location = new System.Drawing.Point(170, 200);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(134, 39);
             this.btn_them.TabIndex = 8;
@@ -245,7 +245,7 @@ namespace PBL3.GUI.FrmCon
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::PBL3.Properties.Resources.Button_Add_icon__1_;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(145, 200);
+            this.btnThem.Location = new System.Drawing.Point(170, 200);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(134, 39);
             this.btnThem.TabIndex = 8;
@@ -400,6 +400,7 @@ namespace PBL3.GUI.FrmCon
             this.lvSanPham.TabIndex = 0;
             this.lvSanPham.UseCompatibleStateImageBehavior = false;
             this.lvSanPham.View = System.Windows.Forms.View.Details;
+            this.lvSanPham.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvSanPham_MouseDoubleClick);
             // 
             // columnHeader1
             // 

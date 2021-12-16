@@ -268,5 +268,32 @@ namespace PBL3.GUI.FrmCon
                 lvSanPham.Items.Add(listViewItem);
             }
         }
+
+        private void lvSanPham_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (lvSanPham.SelectedItems.Count > 0)
+                {
+                    String masp = lvSanPham.SelectedItems[0].SubItems[0].Text;
+                    String ten = lvSanPham.SelectedItems[0].SubItems[1].Text;
+                    String mam = lvSanPham.SelectedItems[0].SubItems[2].Text;
+                    int solo = int.Parse(lvSanPham.SelectedItems[0].SubItems[3].Text);
+                    decimal gia = decimal.Parse(lvSanPham.SelectedItems[0].SubItems[4].Text);
+                    txtMA.Text = masp;
+                    txtTen.Text = ten;
+                    cbbDanhMuc.SelectedItem = mam.ToString();
+                    txtSoLuong.Text = solo.ToString();
+                    txtDonGia.Text = gia.ToString();
+                }
+                //BLL_SanPham.Instance.();
+            }catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            
+
+        }
+        
     }
 }

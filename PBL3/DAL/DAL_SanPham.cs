@@ -74,8 +74,16 @@ namespace PBL3.DAL
         }
         public void EditSP_DAL(SanPham sp)
         {
-            string query = "update SanPham set TenSP = '" + sp.tenSP + "'," + "MaDM = " + sp.maDM + "SLTon = " + sp.SLTon + "GiaBan = " + sp.giaBan + "'";
+            string query = "update SanPham set TenSP = '" +sp.tenSP+
+                "'," +
+                "MaDM = '" + sp.maDM +
+                "'," +
+                "SLTon = " + sp.SLTon + "," +
+                "GiaBan = " + sp.giaBan +
+                " where MaSp ='" + sp.maSp +
+                "'";
             DBHelper.Instance.ExcuteDB(query);
+            
         }
         public LinkedList<SanPham> getSPbyIDDM(string madm)
         {

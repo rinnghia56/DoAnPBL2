@@ -88,7 +88,9 @@ namespace PBL3.DAL
         }
         public void EditDM_DAL(DanhMuc dm)
         {
-            string query = "update DanhMuc set TenDM = '" + dm.tenDM + "'," + "MaDM = " + dm.maDm + "'";
+            string query = "update DanhMuc set " +
+                "TenDM = '" + dm.tenDM + "'," + 
+                "MaDM = '" + dm.maDm + "'" + "where MaDm ='" + dm.maDm + "'";
             DBHelper.Instance.ExcuteDB(query);
         }
     }

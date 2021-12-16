@@ -68,7 +68,12 @@ namespace PBL3.DAL
         }
         public void EditTK_DAL(TaiKhoan tk)
         {
-            string query = "update TaiKhoan set HoTen = '" + tk.hoTen + "'," + "IDTK = " + tk.idTK + "SDT = " + tk.SDT + "Username = " + tk.username + "UserRight = " + tk.userRight + "'";
+            string query = "update TaiKhoan set HoTen = '" + tk.hoTen + 
+                "'," + 
+                "IDTK = '" + tk.idTK + "'," +
+                "SDT = '" + tk.SDT + "'," +
+                "Username = '" + tk.username + "'," +
+                "UserRight = '" + tk.userRight + "'" + "where IDTK = '" + tk.idTK +"'";
             DBHelper.Instance.ExcuteDB(query);
         }
     }

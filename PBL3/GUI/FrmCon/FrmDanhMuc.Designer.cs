@@ -177,6 +177,7 @@ namespace PBL3.GUI.FrmCon
             this.lvDanhMuc.TabIndex = 6;
             this.lvDanhMuc.UseCompatibleStateImageBehavior = false;
             this.lvDanhMuc.View = System.Windows.Forms.View.Details;
+            this.lvDanhMuc.DoubleClick += new System.EventHandler(this.lvDanhMuc_DoubleClick);
             // 
             // columnHeader1
             // 
