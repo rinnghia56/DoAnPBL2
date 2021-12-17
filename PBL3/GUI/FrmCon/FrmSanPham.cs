@@ -282,16 +282,27 @@ namespace PBL3.GUI.FrmCon
                     decimal gia = decimal.Parse(lvSanPham.SelectedItems[0].SubItems[4].Text);
                     txtMA.Text = masp;
                     txtTen.Text = ten;
-                    cbbDanhMuc.SelectedItem = mam.ToString();
+                    for(int i = 0; i < cbbDanhMuc.Items.Count; i++)
+                    {
+                        ComboBoxItem item = cbbDanhMuc.Items[i] as ComboBoxItem;
+                        if(item.valueMember == mam)
+                        {
+                            cbbDanhMuc.SelectedIndex = i;
+                            break;
+                        }
+                    }
+                   
+                   // cbbDanhMuc.SelectedItem = mam.ToString();
                     txtSoLuong.Text = solo.ToString();
                     txtDonGia.Text = gia.ToString();
                 }
                 //BLL_SanPham.Instance.();
-            }catch (Exception err)
+            }
+            catch (Exception err)
             {
                 MessageBox.Show(err.Message);
             }
-            
+
 
         }
         
